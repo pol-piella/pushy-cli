@@ -76,7 +76,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "push com.polpiella.CovidSwiftUI --title &quot;My Push&quot; --subtitle &quot;Subtitle&quot; --body &quot;Body&quot;"
+            argument = "push com.polpiellacodes.CovidSwiftUI --title &quot;My Push&quot; --subtitle &quot;Subtitle&quot; --body &quot;Body&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

@@ -14,4 +14,10 @@ struct Aps: Encodable {
     let category: String?
     let contentAvailable: Int?
     let mutableContent: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case contentAvailable = "content-available"
+        case mutableContent = "mutable-content"
+        case alert, badge, sound, category
+    }
 }
