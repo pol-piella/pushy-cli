@@ -6,4 +6,4 @@ struct Pushy: ParsableCommand {
                                                                           subcommands: [Push.self])
 }
 
-Pushy.main(["test", "--title", "hello", "--subtitle", "world", "--body", "someStuff"])
+Pushy.main()

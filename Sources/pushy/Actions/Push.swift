@@ -14,19 +14,25 @@ struct Push: ParsableCommand {
     @Option(name: .shortAndLong, help: "The title for the push notification") var title: String
     @Option(name: .shortAndLong, help: "The Subtitle for the push notification") var subtitle: String
     @Option(name: .shortAndLong, help: "The Body for the push notification") var body: String
+    @Option(name: .shortAndLong, help: "The number to display for the badge icon") var iconBadge: Int
     
     func run() throws {
         let directory = NSTemporaryDirectory()
         let folder = try Folder(path: directory)
         let file = try folder.createFile(at: "push-test.apns")
-        let aps = Aps(alert: Alert(title: title, subtitle: subtitle, body: body, launchImage: "", titleLocKey: "", subtitleLocArgs: "", locKey: "", locArgs: ""),
-                      badge: 10,
-                      sound: Sound(critical: 1, name: "", volume: "0.5"),
-                      category: "",
-                      contentAvailable: 1,
-                      mutableContent: 1)
-        let pushBody = PushBody(bundleIdentifier: "com.studentbeans.studentbeans", aps: aps)
-        let data = try JSONEncoder().encode(pushBody)
+        let apsBody = Aps(alert: Alert(title: title, subtitle: subtitle, body: body), badge: iconBadge)
+        let data = try JSONEncoder().encode(PushBody(aps: apsBody))
         try file.write(data)
+        shell("xcrun", "simctl", "push", "booted", bundleIdentifier, file.path)
+        try file.delete()
     }
+}
+
+@discardableResult func shell(_ args: String...) -> Int32 {
+    let task = Process()
+    task.launchPath = "/usr/bin/env/"
+    task.arguments = args
+    task.launch()
+    task.waitUntilExit()
+    return task.terminationStatus
 }

@@ -8,6 +8,5 @@
 import Foundation
 
 struct PushBody: Encodable {
-    let bundleIdentifier: String
     let aps: Aps
 }

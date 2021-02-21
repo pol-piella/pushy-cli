@@ -76,7 +76,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "somearg"
+            argument = "push com.polpiella.polpiella -t &quot;&quot; -s &quot;&quot; -b &quot;&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
