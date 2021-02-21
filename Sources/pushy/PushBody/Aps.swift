@@ -8,10 +8,10 @@
 import Foundation
 
 struct Aps: Encodable {
-    let alert: Alert
-    let badge: Int
-    let sound: Sound? = nil
-    let category: String? = nil
-    let contentAvailable: Int? = nil
-    let mutableContent: Int? = nil
+    let alert: Alert?
+    let badge: Int?
+    let sound: Sound?
+    let category: String?
+    let contentAvailable: Int?
+    let mutableContent: Int?
 }

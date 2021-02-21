@@ -10,10 +10,10 @@ import Foundation
 /// Helper method to execute a shell command
 /// - Parameter args: Comma-separated arguments that constitute the shell command
 /// - Returns: Termination status code for the performed operation
-@discardableResult func shell(_ args: String...) -> Int32 {
+@discardableResult func shell(_ command: SimCTLCommand, values: String...) -> Int32 {
     let task = Process()
     task.launchPath = "/usr/bin/env/"
-    task.arguments = args
+    task.arguments = command.arguments + values
     task.launch()
     task.waitUntilExit()
     return task.terminationStatus

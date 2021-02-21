@@ -8,7 +8,6 @@
 import Foundation
 
 struct Sound: Encodable {
-    let critical: Int
-    let name: String
-    let volume: String
+    let name: String?
+    let volume: Double?
 }

@@ -8,13 +8,9 @@
 import Foundation
 
 struct Alert: Encodable {
-    let title: String
-    let subtitle: String
-    let body: String
-    let launchImage: String? = nil
-    let titleLocKey: String? = nil
-    let subtitleLocArgs: String? = nil
-    let locKey: String? = nil
-    let locArgs: String? = nil
+    let title: String?
+    let subtitle: String?
+    let body: String?
+    let launchImage: String?
 }
 
