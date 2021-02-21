@@ -43,8 +43,8 @@ struct Push: ParsableCommand {
                       badge: silent ? nil : badge,
                       sound: Sound(name: soundName, volume: soundVolume),
                       category: category,
-                      contentAvailable: Int(silent),
-                      mutableContent: Int(mutableContent))
+                      contentAvailable: silent ? 1 : 0,
+                      mutableContent: mutableContent ? 1 : 0)
         let data = try JSONEncoder().encode(PushBody(aps: aps))
         try file.write(data)
         shell(.push, values: bundleIdentifier, file.path)
