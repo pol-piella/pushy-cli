@@ -8,6 +8,7 @@
 import Foundation
 import ArgumentParser
 import Files
+import XCRunner
 
 struct Push: ParsableCommand {
     @Argument(help: "Identifier for your application")
@@ -47,7 +48,7 @@ struct Push: ParsableCommand {
                       mutableContent: mutableContent ? 1 : 0)
         let data = try JSONEncoder().encode(PushBody(aps: aps))
         try file.write(data)
-        shell(.push, values: bundleIdentifier, file.path)
+        _ = XCRunner.execute(.push(device: "booted", identifier: bundleIdentifier, filePath: file.path))
         try file.delete()
     }
 }
