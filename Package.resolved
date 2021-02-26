@@ -18,6 +18,15 @@
           "revision": "9564d61b08a5335ae0a36f789a7d71493eacadfc",
           "version": "0.3.2"
         }
+      },
+      {
+        "package": "XCRunner",
+        "repositoryURL": "https://github.com/pol-piella/XCRunner.git",
+        "state": {
+          "branch": null,
+          "revision": "ba4d4ef815aa4851a8d3508e156c8a77b00d1ef5",
+          "version": "0.0.1"
+        }
       }
     ]
   },

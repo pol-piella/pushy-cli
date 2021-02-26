@@ -9,7 +9,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/JohnSundell/Files", from: "4.0.0"),
         .package(url: "https://github.com/apple/swift-argument-parser", from: "0.0.1"),
-        .package(path: "/Users/polpiella/Code/XCRunner")
+        .package(url: "https://github.com/pol-piella/XCRunner.git", from: "0.0.1"),
     ],
     targets: [
         .target(name: "Pushy", dependencies: ["Files", "XCRunner", .product(name: "ArgumentParser", package: "swift-argument-parser")])

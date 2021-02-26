@@ -48,7 +48,7 @@ struct Push: ParsableCommand {
                       mutableContent: mutableContent ? 1 : 0)
         let data = try JSONEncoder().encode(PushBody(aps: aps))
         try file.write(data)
-        _ = XCRunner.execute(.push(device: "booted", identifier: bundleIdentifier, filePath: file.path))
+        XCRunner.execute(.push(device: "booted", identifier: bundleIdentifier, filePath: file.path))
         try file.delete()
     }
 }
