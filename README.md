@@ -16,7 +16,7 @@ A tiny command line tool to easily test sending push notifications to an app run
 
 - [x] Sending Pushes with alerts to the running simulator
 - [x] Sending Silent Pushes to the running simulator
-- [  ] Generate and save `.apns` files
-- [  ] Allow `.apns` and `.json` files to be passed as arguments.
+- [ ] Generate and save `.apns` files
+- [ ] Allow `.apns` and `.json` files to be passed as arguments.
 
 
